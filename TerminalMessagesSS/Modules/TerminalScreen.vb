@@ -110,7 +110,12 @@ Public Class TerminalScreen
                NewLine()
             End If
             NewLine()
-            messageIndex = (messageIndex + 1) Mod messages.Count     ' start again when all were shown
+            ' Next message; when all were shown, start again with the rest in a new random order (the title only once)
+            messageIndex += 1
+            If messageIndex >= messages.Count Then
+               messageIndex = If(messages.Count > 1, 1, 0)
+               ShuffleMessages()
+            End If
             state = TypeState.Prompt
             typeTimer.Interval = MessageDelay
       End Select
@@ -183,6 +188,7 @@ Public Class TerminalScreen
    ' ------------------------------------------------------------------
    ' Loads fileName (relative to msgPath) or, when it is "" or missing, a random *.json file from msgPath (and subfolders).
    ' A message file is a JSON object of  "title": "description"  pairs.
+   ' The first pair is the title of the file: it is shown first, the other messages follow in random order.
    ' If it is not strict JSON (e.g. "Press "Enter"": "Run"), it is read line by line (lenient mode).
    Public Sub LoadMessages(msgPath As String, Optional fileName As String = "")
       messages.Clear()
@@ -195,12 +201,12 @@ Public Class TerminalScreen
          If msgFile <> "" Then
             Dim text As String = File.ReadAllText(msgFile)
             Try
-               Dim dict = JsonSerializer.Deserialize(Of Dictionary(Of String, String))(text)
-               If dict IsNot Nothing Then
-                  For Each kv In dict
-                     AddMessage(kv.Key, kv.Value)
+               ' Read the pairs in file order (a Dictionary does not guarantee the order, and drops duplicate titles)
+               Using doc As JsonDocument = JsonDocument.Parse(text)
+                  For Each prop In doc.RootElement.EnumerateObject()
+                     AddMessage(prop.Name, prop.Value.GetString())   ' a value that is not a string throws: lenient mode
                   Next
-               End If
+               End Using
             Catch ex As Exception
                messages.Clear()
                LoadMessagesLenient(text)   ' re-read the whole data in lenient mode
@@ -215,6 +221,17 @@ Public Class TerminalScreen
       If messages.Count = 0 Then
          AddMessage("No messages found", If(msgFile = "", "No *.json files in " & msgPath, "Check " & msgFile))
       End If
+      ShuffleMessages()
+   End Sub
+
+   ' Shuffles the messages after the first one: the first record is the title of the file and always comes first
+   Private Sub ShuffleMessages()
+      For i As Integer = messages.Count - 1 To 2 Step -1
+         Dim j As Integer = rnd.Next(1, i + 1)
+         Dim tmp As MessageItem = messages(i)
+         messages(i) = messages(j)
+         messages(j) = tmp
+      Next
    End Sub
 
    ' Returns a random *.json file from msgPath (and subfolders), or "" if there is none

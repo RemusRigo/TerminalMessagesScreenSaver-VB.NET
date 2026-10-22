@@ -1,4 +1,11 @@
-﻿' Windows XP cmd.exe (classic style): beige 3D frame, blue gradient title bar, 3D caption buttons
+﻿'--------------------------------------------------------------------------------------------------
+' TerminalMessagesSS: SkinBase.vb
+'    © 2026 Remus Rigo
+'       v1.0.20261017
+'
+' Windows XP cmd.exe (classic style): beige 3D frame, blue gradient title bar, 3D caption buttons
+'--------------------------------------------------------------------------------------------------
+
 Public Class SkinWinXP
    Inherits SkinWin3D
 

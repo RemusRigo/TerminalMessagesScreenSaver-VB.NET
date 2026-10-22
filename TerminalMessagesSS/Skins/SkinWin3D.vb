@@ -1,7 +1,14 @@
-﻿Imports System.Drawing.Drawing2D
-
+﻿'--------------------------------------------------------------------------------------------------
+' TerminalMessagesSS: SkinBase.vb
+'    © 2026 Remus Rigo
+'       v1.0.20261017
+'
 ' Windows 95 / XP classic window: raised 3D frame, (gradient) title bar, 3D caption buttons, sunken body.
 ' SkinWin95 and SkinWinXP set the colors and sizes.
+'--------------------------------------------------------------------------------------------------
+
+Imports System.Drawing.Drawing2D
+
 Public MustInherit Class SkinWin3D
    Inherits SkinBase
 

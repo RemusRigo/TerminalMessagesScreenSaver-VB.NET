@@ -13,6 +13,6 @@ dotnet build -f net10.0-windows -c Release -p:Platform=x64 -p:DebugType=None -p:
 dotnet build -f net10.0-windows -c Release -p:Platform=x86 -p:DebugType=None -p:DebugSymbols=false
 
 copy *.md .\bin\Release /Y
-copy *.txt .\bin\Release /Y
+copy "..\..\JSON\ScreenSaver Messages\Messages" .\bin\Release /Y
 
 @timeout 13

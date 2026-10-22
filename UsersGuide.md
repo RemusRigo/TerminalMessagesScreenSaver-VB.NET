@@ -35,16 +35,16 @@ Look for a `Microsoft.WindowsDesktop.App 8.x` or `10.x` line.
 2. Copy the **whole folder** to a permanent location, for example:
    `D:\My Apps\Terminal Messages ScreenSaver\`
    The folder must contain these files; the screensaver won't start if any of them is missing:
-   * `TerminalSS.scr`
-   * `TerminalSS.dll`
-   * `TerminalSS.deps.json`
-   * `TerminalSS.runtimeconfig.json`
+   * `TerminalMessagesSS.scr`
+   * `TerminalMessagesSS.dll`
+   * `TerminalMessagesSS.deps.json`
+   * `TerminalMessagesSS.runtimeconfig.json`
    * the `Messages` folder, with at least one `*.json` file
-3. Right-click `TerminalSS.scr` and choose **Install**.
-   The Windows **Screen Saver Settings** dialog opens with *TerminalSS* selected.
+3. Right-click `TerminalMessagesSS.scr` and choose **Install**.
+   The Windows **Screen Saver Settings** dialog opens with *TerminalMessagesSS* selected.
 4. Set the **Wait** time and click **OK**.
 
-> If Windows blocks the file ("Windows protected your PC"), right-click `TerminalSS.scr` →
+> If Windows blocks the file ("Windows protected your PC"), right-click `TerminalMessagesSS.scr` →
 > **Properties** → check **Unblock** → **OK**, then try again.
 
 
@@ -52,7 +52,7 @@ Look for a `Microsoft.WindowsDesktop.App 8.x` or `10.x` line.
 ## Test it
 
 * In **Screen Saver Settings**, click **Preview**, or
-* double-click `TerminalSS.scr`.
+* double-click `TerminalMessagesSS.scr`.
 
 A terminal window fills every monitor, taskbar included, and starts typing messages.
 Press any key, click, or move the mouse on any monitor to exit.
@@ -63,7 +63,8 @@ Press any key, click, or move the mouse on any monitor to exit.
 
 ## Settings
 
-In **Screen Saver Settings**, click **Settings...** to open the settings dialog.
+In **Screen Saver Settings**, click **Settings...** to open the settings dialog
+(or right-click `TerminalMessagesSS.scr` → **Configure**).
 
 |Setting|What it does|
 |-|-|
@@ -71,12 +72,10 @@ In **Screen Saver Settings**, click **Settings...** to open the settings dialog.
 |Skin list|Used when **Random Skin** is unchecked: the same skin on every monitor|
 |**Random Messages**|Checked (default): a random message file is used|
 |Message file list|Used when **Random Messages** is unchecked; lists every `*.json` in the message folder|
-|Message folder|The folder with the message files; type a path and press **Enter**, or click **Browse**|
+|Message folder|The folder with the message files; type a path and press **Enter**, click **Browse**, or just leave the box. Default: the `Messages` folder next to `TerminalMessagesSS.scr`|
 
-Click **Ok** to save. If the saved message file no longer exists, the dialog falls back to **Random Messages**.
-
-> For now only the skin settings are used by the screensaver. It still picks a random file from the
-> `Messages` folder next to `TerminalSS.scr`, whatever the message settings say.
+Click **Ok** to save. With no file selected, **Random Messages** is saved.
+If the chosen message file no longer exists, the screensaver (and the dialog) falls back to **Random Messages**.
 
 The settings are stored in the registry, under `HKEY_CURRENT_USER\Software\Remus RIGO\TerminalMessagesSS.VB-NET`.
 
@@ -84,13 +83,16 @@ The settings are stored in the registry, under `HKEY_CURRENT_USER\Software\Remus
 
 ## Messages
 
-The screensaver picks **one random** `*.json` file from the `Messages` folder (subfolders included)
-each time it starts, and types its messages in order. When all were shown, it starts again.
+Each time it starts, the screensaver uses the message file chosen in **Settings**, or **one random**
+`*.json` file from the message folder (subfolders included).
 
-A message file is a JSON object of `"title": "description"` pairs:
+A message file is a JSON object of `"title": "description"` pairs.
+The **first pair is the title of the file** and is always shown first. The other messages follow in
+**random order**; when all were shown, they are shuffled again (the title is not repeated).
 
 ```json
 {
+  "System check": "© 2026 Remus Rigo",
   "Initializing system diagnostics": "please wait...",
   "Memory banks": "OK",
   "Mainframe": "CONNECTED to \"MAIN-01\"",
@@ -101,8 +103,8 @@ A message file is a JSON object of `"title": "description"` pairs:
 Each message is shown as:
 
 ```
-C:\>Initializing system diagnostics
-please wait...
+C:\>System check
+© 2026 Remus Rigo
 
 C:\>Memory banks
 OK
@@ -111,7 +113,9 @@ OK
 
 * The **title** is typed character by character, in green.
 * The **description** appears on the next line; leave it empty (`""`) to show only the title.
-* Tabs are shown as 4 spaces; line breaks (`\n`, strict JSON only) in a description start a new line.
+* `\n` in a title or description starts a new line, `\t` is shown as 4 spaces.
+  To show `\n` as text, write `\\n`.
+* Other JSON escapes work too: `\"`, `\\`, `\/`, `\uXXXX` (e.g. `\u00A9` for ©).
 
 ### Quotes inside messages
 
@@ -123,15 +127,18 @@ If a file is not valid JSON, it is read line by line instead, so this works too:
 ```
 
 In this mode, each message must be on its own line, as `"title": "description"`.
-Everything between the first `"` and the `":` is the title; everything between the next pair of outer quotes is the description.
+Everything between the first `"` and the `":` is the title (spaces before the `:` are allowed);
+everything between the next pair of outer quotes is the description.
+The JSON escapes above (`\n`, `\"`...) work in this mode too.
 
-> If the `Messages` folder is missing or empty, the screensaver types *"No messages found"*.
+> If the message folder is missing or empty, the screensaver types *"No messages found"*.
+> If a file cannot be read (locked, no access, drive offline), it types *"Cannot read messages"* and the reason.
 
 ### Add your own
 
-1. Create a new `.json` file (UTF-8) in the `Messages` folder, or in a subfolder.
-2. Add your `"title": "description"` pairs.
-3. Start the screensaver a few times: each run picks a random file.
+1. Create a new `.json` file (UTF-8) in the message folder, or in a subfolder.
+2. Start with the title pair, e.g. `"My commands": "© 2026 Your Name"`, then add your `"title": "description"` pairs.
+3. Select the file in **Settings**, or start the screensaver a few times: each run picks a random file.
 
 
 

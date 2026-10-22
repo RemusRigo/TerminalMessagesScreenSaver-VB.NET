@@ -1,6 +1,13 @@
-﻿Imports System.Drawing.Drawing2D
-
+﻿'--------------------------------------------------------------------------------------------------
+' TerminalMessagesSS: SkinBase.vb
+'    © 2026 Remus Rigo
+'       v1.0.20261017
+'
 ' Windows 11 cmd.exe window: light title bar with caption buttons, rounded top corners
+'--------------------------------------------------------------------------------------------------
+
+Imports System.Drawing.Drawing2D
+
 Public Class SkinWin11
    Inherits SkinBase
 

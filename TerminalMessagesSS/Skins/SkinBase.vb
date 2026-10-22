@@ -1,8 +1,14 @@
-﻿Imports System.Drawing.Drawing2D
-
+﻿'--------------------------------------------------------------------------------------------------
+' TerminalMessagesSS: SkinBase.vb
+'    © 2026 Remus Rigo
+'       v1.0.20261017
+'
 ' Look of the terminal window
-
 ' Base of all skins: colors, title, layout and drawing of the window around the text
+'--------------------------------------------------------------------------------------------------
+
+Imports System.Drawing.Drawing2D
+
 Public MustInherit Class SkinBase
    Implements IDisposable
 

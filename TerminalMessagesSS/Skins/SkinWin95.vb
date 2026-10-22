@@ -1,4 +1,11 @@
-﻿' Windows 95 MS-DOS Prompt: raised 3D frame ("Desert" colors), teal title bar, 3D caption buttons
+﻿'--------------------------------------------------------------------------------------------------
+' TerminalMessagesSS: SkinBase.vb
+'    © 2026 Remus Rigo
+'       v1.0.20261017
+'
+' Windows 95 MS-DOS Prompt: raised 3D frame ("Desert" colors), teal title bar, 3D caption buttons
+'--------------------------------------------------------------------------------------------------
+
 Public Class SkinWin95
    Inherits SkinWin3D
 

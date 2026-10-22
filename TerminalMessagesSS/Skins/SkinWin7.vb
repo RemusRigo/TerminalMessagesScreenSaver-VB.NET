@@ -1,6 +1,13 @@
-﻿Imports System.Drawing.Drawing2D
-
+﻿'--------------------------------------------------------------------------------------------------
+' TerminalMessagesSS: SkinBase.vb
+'    © 2026 Remus Rigo
+'       v1.0.20261017
+'
 ' Windows 7 Aero Command Prompt: slate glass frame with rounded corners, glass caption buttons, navy console
+'--------------------------------------------------------------------------------------------------
+
+Imports System.Drawing.Drawing2D
+
 Public Class SkinWin7
    Inherits SkinBase
 

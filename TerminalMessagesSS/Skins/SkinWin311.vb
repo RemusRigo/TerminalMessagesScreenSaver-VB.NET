@@ -1,4 +1,11 @@
-﻿' Windows 3.11 MS-DOS Prompt: grey frame, navy title bar, caption buttons; drawn pixel by pixel, scaled by px
+﻿'--------------------------------------------------------------------------------------------------
+' TerminalMessagesSS: SkinBase.vb
+'    © 2026 Remus Rigo
+'       v1.0.20261017
+'
+' Windows 3.11 MS-DOS Prompt: grey frame, navy title bar, caption buttons; drawn pixel by pixel, scaled by px
+'--------------------------------------------------------------------------------------------------
+
 Public Class SkinWin311
    Inherits SkinBase
 

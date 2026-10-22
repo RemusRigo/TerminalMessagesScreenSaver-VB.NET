@@ -31,15 +31,17 @@ Public Class frmCfg
       End If
    End Sub
 
-
+   '-----------------------------------------------------------------------------------------------
+   ' LoadSettings
    Public Sub LoadSettings()
-      ' Defaults, used when the key or a value is missing (first run)
+      ' Defaults / first run
       Dim randomMessages As Boolean = True
       Dim randomSkin As Boolean = True
       Dim loadSkin As Integer = 0
       Dim msgPath As String = ""
       Dim msgFile As String = ""
 
+      ' Registry
       Try
          Using key As RegistryKey = Registry.CurrentUser.OpenSubKey(regAppPath)
             If key IsNot Nothing Then
@@ -65,7 +67,6 @@ Public Class frmCfg
       ' The list must be filled before the saved file can be selected
       ScanMessages(msgPath, showError:=False)
 
-
       ' check if file from registry exists, if not fall back to random messages
       Dim index As Integer = If(msgFile = "", ListBox.NoMatches, lstBoxMessages.FindStringExact(msgFile))
       If index <> ListBox.NoMatches Then
@@ -73,9 +74,10 @@ Public Class frmCfg
       Else
          chkBoxRandomMessages.Checked = True
       End If
-
    End Sub
 
+   '-----------------------------------------------------------------------------------------------
+   ' SaveSettings
    Public Sub SaveSettings()
       ' Path typed but not scanned yet: the list (and the selected file) must belong to the saved path
       If txtBoxMessagePath.Text <> scannedPath Then ScanMessages(txtBoxMessagePath.Text)
@@ -97,12 +99,11 @@ Public Class frmCfg
       End Try
    End Sub
 
-
-
+   '-----------------------------------------------------------------------------------------------
+   ' ScanMessages
    Private Sub ScanMessages(msgPath As String, Optional showError As Boolean = True)
       Dim rootPath As String = msgPath
 
-      ' Clear first, so the list never shows the files of a previous folder
       lstBoxMessages.Items.Clear()
       scannedPath = msgPath
 
