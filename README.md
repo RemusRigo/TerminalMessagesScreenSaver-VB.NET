@@ -17,9 +17,9 @@ Terminal Messages ScreenSaver: a terminal window that types messages on your scr
 * Messages are read from a `*.json` file in the messages folder (subfolders included)
   * The folder set in Settings, or the `Messages` folder next to the `.scr` when nothing is saved
   * A random file, or a fixed file chosen in Settings (random again if that file is gone)
-  * Strict JSON, or a lenient mode for lines with unescaped quotes (e.g. `"Type "help"": "for a list of commands"`)
+  * Strict JSON, or a lenient mode for lines with unescaped quotes
   * Both modes understand the JSON escapes `\"` `\\` `\/` `\n` `\r` `\t` `\uXXXX` (`\n` starts a new line, write `\\n` to show it as text)
-  * The first record of the file is its title (e.g. `"MySQL statements": "© 2026 Remus Rigo"`): it is shown first, the other messages follow in random order
+  * The first record of the file is its title (it is shown first, the other messages follow in random order)
   * When all messages were shown, they are shuffled again and shown in a new order (the title is not repeated)
   * A file that cannot be read shows the reason in the terminal instead of an error dialog
 * The text wraps at the window width and scrolls up when the screen is full, like a real console
@@ -29,10 +29,7 @@ Terminal Messages ScreenSaver: a terminal window that types messages on your scr
   * **WindowsXP**: Windows XP cmd.exe (classic style), beige 3D frame, blue gradient title bar, 3D caption buttons
   * **Windows7**: Windows 7 Command Prompt, slate glass frame, rounded corners, glass caption buttons, navy console
   * **Windows11**: Windows 11 Command Prompt, light title bar with caption buttons, rounded corners
-* Font: Consolas, Cascadia Mono or Courier New (the first one found)
-* Settings dialog: random skin (a different one on each monitor) or a fixed skin, messages folder, random or fixed message file
-  * Settings are saved in the registry: `HKCU\Software\Remus RIGO\TerminalMessagesSS.VB-NET`
-  * Opens with `/c`, or when the `.scr` is started without arguments (right-click > Configure)
+* Settings are saved in the registry: `HKCU\Software\Remus RIGO\TerminalMessagesSS.VB-NET`
 
 
 
