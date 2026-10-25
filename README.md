@@ -34,15 +34,14 @@ Terminal Messages ScreenSaver: a terminal window that types messages on your scr
 
 ## 🛠️ User's Guide
 
-See the [User's Guide](UsersGuide.md) for downloads, runtimes, installation and message files.
-
+* See the [User's Guide](UsersGuide.md) for downloads, runtimes, installation and message files.
+* You cand find messages here: [ScreenSaverMessages-JSON](https://github.com/RemusRigo/ScreenSaverMessages-JSON)
 
 
 ## ⚙️ Statistics
 
 ![VB.NET](https://img.shields.io/badge/Language-VB.NET-blue)
 ![API](https://img.shields.io/badge/API-System.Text.Json-lightblue)
-![.NETFramework4.8](https://img.shields.io/badge/Runtime-.NET%20Framework%204.8-lightblue)
 ![.NET8.0](https://img.shields.io/badge/Runtime-.NET%208.0-lightblue)
 ![.NET10.0](https://img.shields.io/badge/Runtime-.NET%2010.0-lightblue)
 ![VS](https://img.shields.io/badge/IDE-Visual%20Studio-purple)

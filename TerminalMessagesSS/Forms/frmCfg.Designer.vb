@@ -22,15 +22,14 @@ Partial Class frmCfg
    'Do not modify it using the code editor.
    <System.Diagnostics.DebuggerStepThrough()> _
    Private Sub InitializeComponent()
-      Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCfg))
       btnOk = New Button()
       chkBoxRandomMessages = New CheckBox()
       txtBoxMessagePath = New TextBox()
       btnBrowse = New Button()
       lstBoxMessages = New ListBox()
       grpBoxSkin = New GroupBox()
-      chkBoxRandomSkin = New CheckBox()
       cmbBoxSkins = New ComboBox()
+      chkBoxRandomSkin = New CheckBox()
       grpBoxSkin.SuspendLayout()
       SuspendLayout()
       ' 
@@ -92,6 +91,14 @@ Partial Class frmCfg
       grpBoxSkin.TabStop = False
       grpBoxSkin.Text = "Skins"
       ' 
+      ' cmbBoxSkins
+      ' 
+      cmbBoxSkins.FormattingEnabled = True
+      cmbBoxSkins.Location = New Point(6, 47)
+      cmbBoxSkins.Name = "cmbBoxSkins"
+      cmbBoxSkins.Size = New Size(203, 23)
+      cmbBoxSkins.TabIndex = 8
+      ' 
       ' chkBoxRandomSkin
       ' 
       chkBoxRandomSkin.AutoSize = True
@@ -101,14 +108,6 @@ Partial Class frmCfg
       chkBoxRandomSkin.TabIndex = 7
       chkBoxRandomSkin.Text = "Random Skin"
       chkBoxRandomSkin.UseVisualStyleBackColor = True
-      ' 
-      ' cmbBoxSkins
-      ' 
-      cmbBoxSkins.FormattingEnabled = True
-      cmbBoxSkins.Location = New Point(6, 47)
-      cmbBoxSkins.Name = "cmbBoxSkins"
-      cmbBoxSkins.Size = New Size(203, 23)
-      cmbBoxSkins.TabIndex = 8
       ' 
       ' frmCfg
       ' 
@@ -121,7 +120,7 @@ Partial Class frmCfg
       Controls.Add(txtBoxMessagePath)
       Controls.Add(chkBoxRandomMessages)
       Controls.Add(btnOk)
-      Icon = CType(resources.GetObject("$this.Icon"), Icon)
+      FormBorderStyle = FormBorderStyle.FixedToolWindow
       Name = "frmCfg"
       StartPosition = FormStartPosition.CenterScreen
       Text = "Settings"
