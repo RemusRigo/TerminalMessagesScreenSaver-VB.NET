@@ -1,5 +1,6 @@
 # Terminal Messages ScreenSaver
 Terminal Messages ScreenSaver: a terminal window that types messages on your screen
+<br>You cand find messages here: [ScreenSaverMessages-JSON](https://github.com/RemusRigo/ScreenSaverMessages-JSON)
 
 
 
@@ -34,8 +35,8 @@ Terminal Messages ScreenSaver: a terminal window that types messages on your scr
 
 ## 🛠️ User's Guide
 
-* See the [User's Guide](UsersGuide.md) for downloads, runtimes, installation and message files.
-* You cand find messages here: [ScreenSaverMessages-JSON](https://github.com/RemusRigo/ScreenSaverMessages-JSON)
+See the [User's Guide](UsersGuide.md) for downloads, runtimes, installation and message files.
+
 
 
 ## ⚙️ Statistics
