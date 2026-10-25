@@ -13,7 +13,7 @@ Terminal Messages ScreenSaver: a terminal window that types messages on your scr
 ## ✨ Features
 
 * A full-screen terminal window that types commands character by character, like someone is typing them
-* Multi-monitor: one terminal window on every monitor
+* Multi-monitor: one terminal window per monitor
 * Messages are read from a `*.json` file in the messages folder (subfolders included)
   * The folder set in Settings, or the `Messages` folder next to the `.scr` when nothing is saved
   * A random file, or a fixed file chosen in Settings (random again if that file is gone)
@@ -29,25 +29,25 @@ Terminal Messages ScreenSaver: a terminal window that types messages on your scr
   * **WindowsXP**: Windows XP cmd.exe (classic style), beige 3D frame, blue gradient title bar, 3D caption buttons
   * **Windows7**: Windows 7 Command Prompt, slate glass frame, rounded corners, glass caption buttons, navy console
   * **Windows11**: Windows 11 Command Prompt, light title bar with caption buttons, rounded corners
-* Settings are saved in the registry: `HKCU\Software\Remus RIGO\TerminalMessagesSS.VB-NET`
 
 
 
-## 📥 User's Guide
+## 🛠️ User's Guide
 
 See the [User's Guide](UsersGuide.md) for downloads, runtimes, installation and message files.
 
 
 
-## 🛠️ Statistics
+## ⚙️ Statistics
 
 ![VB.NET](https://img.shields.io/badge/Language-VB.NET-blue)
 ![API](https://img.shields.io/badge/API-System.Text.Json-lightblue)
+![.NETFramework4.8](https://img.shields.io/badge/Runtime-.NET%20Framework%204.8-lightblue)
 ![.NET8.0](https://img.shields.io/badge/Runtime-.NET%208.0-lightblue)
 ![.NET10.0](https://img.shields.io/badge/Runtime-.NET%2010.0-lightblue)
 ![VS](https://img.shields.io/badge/IDE-Visual%20Studio-purple)
 <br>
-![status](https://img.shields.io/badge/status-in%20progress-yellow)
+![status](https://img.shields.io/badge/status-completed-brightgreen)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/RemusRigo/TerminalScreenSaver-VB.NET/total)
 
 

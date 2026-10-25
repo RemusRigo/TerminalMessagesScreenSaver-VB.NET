@@ -4,6 +4,9 @@ Module MainProgram
 
    <STAThread()>
    Sub Main(args As String())
+#If Not NETFRAMEWORK Then
+      Application.SetHighDpiMode(HighDpiMode.PerMonitorV2)
+#End If
       Application.EnableVisualStyles()
       Application.SetCompatibleTextRenderingDefault(False)
 
