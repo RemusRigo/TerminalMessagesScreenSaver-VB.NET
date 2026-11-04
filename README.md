@@ -33,13 +33,13 @@ Terminal Messages ScreenSaver: a terminal window that types messages on your scr
 
 
 
-## 🛠️ User's Guide
+## ⚙️ User's Guide
 
-See the [User's Guide](UsersGuide.md) for downloads, runtimes, installation and message files.
+See the [User's Guide](Users%20Guide.md) for downloads, runtimes, installation and message files.
 
 
 
-## ⚙️ Statistics
+## 🛠️ Statistics
 
 ![VB.NET](https://img.shields.io/badge/Language-VB.NET-blue)
 ![API](https://img.shields.io/badge/API-System.Text.Json-lightblue)
