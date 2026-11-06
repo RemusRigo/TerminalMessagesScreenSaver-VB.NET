@@ -1,4 +1,10 @@
-﻿Imports System.IO
+﻿'--------------------------------------------------------------------------------------------------
+' TerminalMessagesSS: frmCfg.vb: Settings form
+'    © 2026 Remus Rigo
+'       v1.0.20261017
+'--------------------------------------------------------------------------------------------------
+
+Imports System.IO
 Imports Microsoft.Win32
 
 Public Class frmSS

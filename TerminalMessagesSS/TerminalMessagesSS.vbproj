@@ -8,7 +8,7 @@
    <OutputType>WinExe</OutputType>
    <Platforms>x64;x86</Platforms>
    <RootNamespace>TerminalMessagesSS</RootNamespace>
-   <StartupObject>TerminalMessagesSS.MainProgram</StartupObject>
+   <StartupObject>TerminalMessagesSS.Main</StartupObject>
    <TargetFrameworks>net8.0-windows;net10.0-windows</TargetFrameworks>
    <UseWindowsForms>true</UseWindowsForms>
 </PropertyGroup>
@@ -39,8 +39,10 @@
    <Folder Include="Skins\" />
 </ItemGroup>
 
-<Target Name="RenameToScr" AfterTargets="Build">
-   <Move SourceFiles="$(TargetDir)$(AssemblyName).exe" DestinationFiles="$(TargetDir)$(AssemblyName).scr" />
-</Target>
+   <Target Name="RenameToScr" AfterTargets="Build">
+      <Move Condition="Exists('$(TargetDir)$(AssemblyName).exe')" SourceFiles="$(TargetDir)$(AssemblyName).exe" DestinationFiles="$(TargetDir)$(AssemblyName).scr" />
+      <Move Condition="Exists('$(TargetDir)$(AssemblyName).exe.config')" SourceFiles="$(TargetDir)$(AssemblyName).exe.config" DestinationFiles="$(TargetDir)$(AssemblyName).scr.config" />
+      <Delete Condition="'$(Configuration)' == 'Release' And Exists('$(TargetDir)$(AssemblyName).pdb')" Files="$(TargetDir)$(AssemblyName).pdb" />
+   </Target>
 
 </Project>

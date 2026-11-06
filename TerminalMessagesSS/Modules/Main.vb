@@ -1,6 +1,12 @@
-﻿Imports Microsoft.Win32
+﻿'--------------------------------------------------------------------------------------------------
+' TerminalMessagesSS: frmCfg.vb: Settings form
+'    © 2026 Remus Rigo
+'       v1.0.20261017
+'--------------------------------------------------------------------------------------------------
 
-Module MainProgram
+Imports Microsoft.Win32
+
+Module Main
 
    <STAThread()>
    Sub Main(args As String())

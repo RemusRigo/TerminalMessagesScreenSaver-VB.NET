@@ -1,3 +1,9 @@
+'--------------------------------------------------------------------------------------------------
+' TerminalMessagesSS: frmCfg.vb: Settings form
+'    © 2026 Remus Rigo
+'       v1.0.20261017
+'--------------------------------------------------------------------------------------------------
+
 Imports System.Globalization
 Imports System.IO
 Imports System.Text

@@ -2,8 +2,6 @@
 ' libReg - Registry functions
 '    © 2026 Remus Rigo
 '       v1.0 2026-04-29
-'
-' add Imports Microsoft.Win32
 '--------------------------------------------------------------------------------------------------
 
 Imports Microsoft.Win32
