@@ -2,6 +2,7 @@
 Terminal Messages ScreenSaver: a terminal window that types messages on your screen
 <br>You cand find messages here: [ScreenSaverMessages-JSON](https://github.com/RemusRigo/ScreenSaverMessages-JSON)
 
+Windows 3.11 skin
 ![Win 3.11](https://github.com/RemusRigo/TerminalMessagesScreenSaver-VB.NET/blob/main/Screenshots/TerminalWin311.png)
 
 
