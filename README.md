@@ -54,7 +54,7 @@ See the [User's Guide](Users%20Guide.md) for downloads, runtimes, installation a
 ![VS](https://img.shields.io/badge/IDE-Visual%20Studio-purple)
 <br>
 ![status](https://img.shields.io/badge/status-completed-brightgreen)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/RemusRigo/TerminalScreenSaver-VB.NET/total)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/RemusRigo/TerminalMessagesScreenSaver-VB.NET/total)
 
 
 
